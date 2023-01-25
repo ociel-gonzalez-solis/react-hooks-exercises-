@@ -1,0 +1,16 @@
+body {
+  padding: 20px;
+}
+
+button {
+  margin-right: 50px;
+  width: 100px;
+  height: 80px;
+  background: blue;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+  color: green;
+  font-size: 3rem;
+}
