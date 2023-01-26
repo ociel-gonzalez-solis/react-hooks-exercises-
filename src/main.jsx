@@ -1,7 +1,8 @@
 import React from "react";
 import "./index.css";
 import { createRoot } from "react-dom/client";
-import { TodoApp } from "./useReducer/TodoApp";
+// import { MainApp } from "./useContext/MainApp";
+// import { TodoApp } from "./useReducer/TodoApp";
 // import { Padre } from "./useMemo/tarea/Padre";
 // import "./useReducer/intro-reducer";
 
@@ -16,11 +17,15 @@ import { TodoApp } from "./useReducer/TodoApp";
 // import CounterApp from "./useState/CounterApp";
 // import CounterAppCustomHook from "./useState/CounterAppCustomHook";
 // import SimpleForm from "./useEffect/simpleForm";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./useContext/Router";
+
+const router = Router();
 
 const root = createRoot(document.getElementById("root"));
-root.render(<TodoApp />);
 
-/**
- * <React.StrictMode>
-</React.StrictMode> 
-*/
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
