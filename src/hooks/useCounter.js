@@ -5,10 +5,10 @@ export const useCounters = (initialValue = 10) => {
   const originial = initialValue;
 
   const increment = (value = 1) => {
-    setCounter(counter + value);
+    setCounter((current) => current + value);
   };
   const decrement = (value = 1) => {
-    setCounter(counter - value);
+    setCounter((current) => current - value);
   };
 
   const reset = () => {

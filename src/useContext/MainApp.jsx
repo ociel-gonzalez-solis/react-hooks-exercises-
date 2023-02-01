@@ -1,13 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import { UserProvider } from "./context/UserProvider";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routesConfig from "./Router";
+
 export const MainApp = () => {
+  const router = createBrowserRouter(routesConfig);
   return (
-    <UserProvider>
-      <h1>MainApp</h1>
-      <hr />
-      <NavBar />
-      <Outlet />
-    </UserProvider>
+    <div className="app">
+      <RouterProvider router={router} />
+    </div>
   );
 };

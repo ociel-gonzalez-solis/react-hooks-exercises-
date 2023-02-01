@@ -1,29 +1,35 @@
-import { createBrowserRouter } from "react-router-dom";
-import { MainApp } from "./MainApp";
+import { Outlet } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+import { UserProvider } from "./context/UserProvider";
 import { AboutPage, ErrorPage, HomePage, LoginPage } from "./Pages";
 
-export const Router = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainApp />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "home",
-          element: <HomePage />,
-        },
-        {
-          path: "login",
-          element: <LoginPage />,
-        },
-        {
-          path: "about",
-          element: <AboutPage />,
-        },
-      ],
-    },
-  ]);
+const routesConfig = [
+  {
+    path: "/",
+    element: (
+      <>
+        <UserProvider>
+          <NavBar />
+          <Outlet />
+        </UserProvider>
+      </>
+    ),
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+    ],
+  },
+];
 
-  return router;
-};
+export default routesConfig;

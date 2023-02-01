@@ -19,13 +19,15 @@ import { createRoot } from "react-dom/client";
 // import SimpleForm from "./useEffect/simpleForm";
 import { RouterProvider } from "react-router-dom";
 import { Router } from "./useContext/Router";
+import { MainApp } from "./useContext/MainApp";
 
-const router = Router();
+// const router = Router();
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <MainApp />
   </React.StrictMode>
 );

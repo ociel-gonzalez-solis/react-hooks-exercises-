@@ -17,7 +17,11 @@ const MultipleCustomHooks = () => {
       <hr />
       {counter <= 0 && <h3>Quote Loading...</h3>}
       <Quotes data={data} />
-      <button className="btn btn-primary" onClick={() => increment()}>
+      <button
+        className="btn btn-primary"
+        onClick={() => increment()}
+        disabled={isLoading}
+      >
         More quotes
       </button>
       <button className="btn btn-primary" onClick={reset}>
